@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function TodoList({ listItem, handleDeleteItems }) {
   return (
@@ -10,7 +10,7 @@ function TodoList({ listItem, handleDeleteItems }) {
         return (
           <div
             key={item.id}
-            className="flex items-center justify-between border px-3 py-2 capitalize "
+            className="flex items-center justify-between border px-3 py-2 capitalize rounded-lg "
           >
             {item.input}
             <FontAwesomeIcon

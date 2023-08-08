@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TodoFrom from "../todoFrom";
 import TodoList from "../todoList";
 function TodoPage() {
@@ -10,14 +10,18 @@ function TodoPage() {
   const handleDeleteItems = (id) => {
     setListItem(listItem.filter((data) => data.id !== id));
   };
+  localStorage.setItem("items", JSON.stringify(listItem));
+
   return (
-    <>
-      <h1>Todo List</h1>
+    <div className=" border-purple-500 border rounded px-4 py-4 bg-white shadow ">
+      <span className="m-0 text-center font-semibold text-lg mb-2">
+        Todo List
+      </span>
       <div>
         <TodoFrom addTodo={addTodo} />
         <TodoList listItem={listItem} handleDeleteItems={handleDeleteItems} />
       </div>
-    </>
+    </div>
   );
 }
 
