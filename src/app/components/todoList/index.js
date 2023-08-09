@@ -28,7 +28,8 @@ function TodoList({
                   type="text"
                   className="mr-3 border"
                   onChange={handleEditListText}
-                  value={editListItemText}
+                  // value={editListItemText}
+                  defaultValue={item.text}
                 />
               </div>
             ) : (
