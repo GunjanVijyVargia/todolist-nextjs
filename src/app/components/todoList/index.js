@@ -40,7 +40,6 @@ function TodoList({
                   checked={item.complete}
                 />
                 {item.text}
-                {editListItemText === item?.id ? editListItemText : ""}
               </div>
             )}
             <div className="flex items-center justify-between">
