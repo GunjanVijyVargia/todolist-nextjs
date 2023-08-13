@@ -6,8 +6,6 @@ function TodoPage() {
   const [listItem, setListItem] = useState([]);
   const [editListItem, setEditListItem] = useState(null);
   const [editListItemText, setEditListItemText] = useState("");
-  console.log(editListItem, "editLitItem");
-  console.log(editListItemText, "editListItemText");
 
   const addTodo = (text) => {
     setListItem([...listItem, { id: listItem.length + 1, text }]);
@@ -45,7 +43,7 @@ function TodoPage() {
     setEditListItemText("");
   };
   return (
-    <div className=" border-purple-500 border rounded px-4 py-4 bg-white shadow  w-[40%] ">
+    <div className=" border-purple-500 border rounded px-4 py-4 bg-white shadow  lg:w-[40%] xs:w-[100%] ">
       <span className="m-0 text-center font-semibold text-lg mb-2">
         Todo List
       </span>

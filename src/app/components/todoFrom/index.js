@@ -12,9 +12,9 @@ function TodoFrom({ addTodo }) {
     }
   };
   return (
-    <div className="border-2 border-purple-600 rounded-lg ">
+    <div className="border-2 border-purple-600 rounded-lg  w-full">
       <input
-        className="placeholder-white  w-[60%] placeholder-opacity-100 text-white px-9 py-4 border-none appearance-none focus:border-none outline-none bg-purple-600"
+        className="placeholder-white  lg:w-[60%] xs:w-[100%] placeholder-opacity-100 text-white px-9 py-4 border-none appearance-none focus:border-none outline-none bg-purple-600"
         type="text"
         placeholder="Add Todo..."
         onChange={(e) => setText(e.target.value)}
@@ -22,7 +22,7 @@ function TodoFrom({ addTodo }) {
       />
       <button
         onClick={handleAddItem}
-        className="  bg-purple-400 text-white px-9 py-4  w-[40%] focus:none rounded-r-[6px] "
+        className="  bg-purple-800 text-white px-9 py-4  lg:w-[40%] xs:w-[100%] focus:none rounded-r-[6px] "
       >
         Add
       </button>

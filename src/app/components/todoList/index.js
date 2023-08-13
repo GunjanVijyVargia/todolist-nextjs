@@ -13,20 +13,22 @@ function TodoList({
   handleSubmitEditText,
 }) {
   return (
-    <div className="bg-white rounded-lg px-3 py-3 border border-purple-400 my-4">
+    <div className="bg-white rounded-lg px-3 py-3 border border-purple-400 my-4 w-full">
       <h1 className="text-center font-semibold text-lg mb-2">List Item</h1>
       {listItem.map((item, i) => {
         return (
           <div
             key={item.id}
-            className="flex items-center justify-between border px-3 py-2 capitalize rounded-lg my-2 "
-            style={{ display: item.complete ? "none " : "flex" }}
+            className={` ${
+              item.complete ? "none" : "lg:flex md:flex xs:block xs:w-[100%]"
+            } md:items-center md:justify-between border px-3 py-2 capitalize rounded-lg my-2`}
+            // style={{ display: item.complete ? "none " : "flex" }}
           >
             {editListItem == item.id ? (
               <div className="flex items-center justify-between">
                 <input
                   type="text"
-                  className="mr-3 border"
+                  className="mr-3 border py-3 rounded border-black focus:border-purple-400"
                   onChange={handleEditListText}
                   // value={editListItemText}
                   defaultValue={item.text}
@@ -48,13 +50,13 @@ function TodoList({
                 <FontAwesomeIcon
                   onClick={() => handleSubmitEditText(item.id)}
                   icon={faSave}
-                  className="fas fa-trash bg-[#dc2626] py-3 px-3 rounded text-white mr-2"
+                  className="fas fa-trash  bg-[#ffff] py-3 px-3 rounded text-purple-500 mr-2 border border-purple-400 "
                 ></FontAwesomeIcon>
               ) : (
                 <FontAwesomeIcon
                   onClick={() => handleEditListItems(item.id)}
                   icon={faEdit}
-                  className="fas fa-trash bg-[#dc2626] py-3 px-3 rounded text-white mr-2"
+                  className="fas fa-trash bg-[#ffff] py-3 px-3 rounded text-purple-400 mr-2 border border-purple-400 "
                 ></FontAwesomeIcon>
               )}
               <FontAwesomeIcon
